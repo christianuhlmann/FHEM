@@ -1,8 +1,8 @@
 ##############################################
-# $Id: myUtilsTemplate.pm 7570 2015-01-14 18:31:44Z rudolfkoenig $
+# $Id: myUtils_thereestateTimer.pm 1001 2016-08-07 13:29:44Z christianuhlmann $
 #
-# Save this file as 99_myUtils.pm, and create your own functions in the new
-# file. They are then available in every Perl expression.
+# mapping des Zustands der Fenster und Türen an den Homematic WindowRec 
+# inkl. Timer bei Türen
 
 package main;
 
