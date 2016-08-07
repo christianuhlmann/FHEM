@@ -74,21 +74,21 @@ sub mapthereestatewithtime($) {
 	Log 1, ("mapthereestatewithtime: devvirt: $devvirt");
 
 #	if ($defs{$devvirt}) {
-#		if    ($state eq "opened") 	{ $statevirt = "open"; }
-#	 	elsif ($state eq "tilted")	{ $statevirt = "open"; }
-#	 	elsif ($state eq "close")	{ $statevirt = "closed"; } 
-#	 	else 						{ $statevirt = $state; }
+		if    ($state eq "opened") 	{ $statevirt = "open"; }
+	 	elsif ($state eq "tilted")	{ $statevirt = "open"; }
+	 	elsif ($state eq "close")	{ $statevirt = "closed"; } 
+	 	else 						{ $statevirt = $state; }
 
-#		my $virt_dev_state = ReadingsVal("$devvirt","virt_state","unknown");
+		my $virt_dev_state = ReadingsVal("$devvirt","virt_state","unknown");
 
-#		if($virt_dev_state ne $state) {
+		if($virt_dev_state ne $state) {
 
-			# fhem("set $devvirt postEvent $statevirt");
-			# readingsSingleUpdate($devvirt,'virt_state',"$statevirt",0);
-#			Log 1, ("mapthereestatewithtime ($devvirt): $statevirt");
-			Log 1, ("mapthereestatewithtime");
+			fhem("set $devvirt postEvent $statevirt");
+			readingsSingleUpdate($devvirt,'virt_state',"$statevirt",0);
+			Log 1, ("mapthereestatewithtime ($devvirt): $statevirt");
+#			Log 1, ("mapthereestatewithtime");
 
-#		}
+		}
 #	}
 	# alle timer löschen
 	RemoveInternalTimer($hash); 
